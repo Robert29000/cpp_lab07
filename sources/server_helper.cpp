@@ -10,7 +10,7 @@ void from_json(const json& j, suggest& s){
   j.at("cost").get_to(s.cost);
 }
 
-result::result(std::string& name, int cost):name(name), cost(cost), position(-1){
+result::result(std::string& name_p, int cost_p):name(name_p), cost(cost_p), position(-1){
 }
 
 bool result::operator<(const result& r) const {
