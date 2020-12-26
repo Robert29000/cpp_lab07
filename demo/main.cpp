@@ -52,7 +52,7 @@ void handle_request(http::request<Body, http::basic_fields<Allocator>>&& req,
 
   std::cout << req.target() << " " << req.body << std::endl;
 
-  if (req.target() != "/v1/api/suggest/"){
+  if (req.target() != "/v1/api/suggest"){
     return send(bad_request("Not Found"));
   }
   json result_data;
