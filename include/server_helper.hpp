@@ -42,7 +42,7 @@ void send_lambda<Stream>::operator()(http::message<isRequest, Body, Fields>&& ms
    // Determine if we should close the connection after
   close_ = !msg.keep_alive();
   // We need the serializer here because the serializer requires
-  // a non-const file_body, and the message oriented version of
+  // a non-const body, and the message oriented version of
   // http::write only works with const messages.
   http::serializer<isRequest, Body, Fields> sr{msg};
   http::write(stream_, sr, ec_);

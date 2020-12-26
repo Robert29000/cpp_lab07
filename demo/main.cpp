@@ -50,7 +50,6 @@ void handle_request(http::request<Body, http::basic_fields<Allocator>>&& req,
     return send(bad_request("Illegal request-target"));
   }
 
-  std::cout << req.target() << " " << req.body << std::endl;
 
   if (req.target() != "/v1/api/suggest"){
     return send(bad_request("Not Found"));
